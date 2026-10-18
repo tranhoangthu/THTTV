@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff121212" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/app_icon_your_company" android:layout_marginEnd="8.0dip" />
+            <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OK Player" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true">
+            <ImageButton android:id="@id/btn_settings" android:background="?android:selectableItemBackgroundBorderless" android:padding="8.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_settings_gear" android:scaleType="fitCenter" android:tint="@android:color/white" android:contentDescription="Settings" />
+            <ImageButton android:id="@id/btn_source" android:background="?android:selectableItemBackgroundBorderless" android:padding="8.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_menu_channels" android:scaleType="fitCenter" android:tint="@android:color/white" android:contentDescription="Sources" android:layout_marginStart="8.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/search_input_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:paddingStart="12.0dip" android:paddingEnd="8.0dip" android:layout_marginStart="12.0dip" android:layout_marginEnd="12.0dip">
+        <EditText android:textSize="14.0sp" android:textColor="#ffffffff" android:textColorHint="#88ffffff" android:id="@id/search_input" android:background="@null" android:layout_width="0.0dip" android:layout_height="40.0dip" android:hint="Tìm kiếm kênh..." android:singleLine="true" android:layout_weight="1.0" android:imeOptions="actionSearch" />
+        <ImageButton android:id="@id/btn_clear_search" android:background="?android:selectableItemBackgroundBorderless" android:padding="8.0dip" android:visibility="gone" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/ic_close_x" android:scaleType="fitCenter" android:tint="#88ffffff" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/category_recycler" android:background="#ff1a1a1a" android:paddingBottom="8.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_view" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

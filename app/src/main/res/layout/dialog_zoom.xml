@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:background="#ee121212" android:padding="20.0dip" android:layout_width="340.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="14.0dip">
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔍 Điều chỉnh Zoom" android:layout_centerVertical="true" />
+        <ImageButton android:id="@id/btn_zoom_close" android:background="@drawable/zoom_button_bg" android:focusable="true" android:nextFocusLeft="@id/btn_zoom_x" android:nextFocusDown="@id/btn_zoom_x" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_close_x" android:tint="@android:color/white" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dip">
+        <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:id="@id/btn_zoom_x" android:background="@drawable/zoom_button_bg" android:focusable="true" android:nextFocusRight="@id/btn_zoom_y" android:nextFocusUp="@id/btn_zoom_close" android:nextFocusDown="@id/zoom_seekbar" android:layout_width="0.0dip" android:layout_height="44.0dip" android:text="↔ Ngang" android:layout_weight="1.0" android:layout_marginEnd="5.0dip" />
+        <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:id="@id/btn_zoom_y" android:background="@drawable/zoom_button_bg" android:focusable="true" android:nextFocusLeft="@id/btn_zoom_x" android:nextFocusRight="@id/btn_zoom_all" android:nextFocusUp="@id/btn_zoom_close" android:nextFocusDown="@id/zoom_seekbar" android:layout_width="0.0dip" android:layout_height="44.0dip" android:text="↕ Dọc" android:layout_weight="1.0" android:layout_marginEnd="5.0dip" />
+        <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:id="@id/btn_zoom_all" android:background="@drawable/zoom_button_bg" android:focusable="true" android:nextFocusLeft="@id/btn_zoom_y" android:nextFocusUp="@id/btn_zoom_close" android:nextFocusDown="@id/zoom_seekbar" android:layout_width="0.0dip" android:layout_height="44.0dip" android:text="⬛ Đều" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:textSize="40.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:id="@id/zoom_percent_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="100%" />
+    <SeekBar android:id="@id/zoom_seekbar" android:focusable="true" android:focusableInTouchMode="true" android:nextFocusUp="@id/btn_zoom_x" android:nextFocusDown="@id/btn_zoom_reset" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:max="250" android:progress="50" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dip">
+        <TextView android:textSize="12.0sp" android:textColor="#88ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="50%" />
+        <TextView android:textSize="12.0sp" android:textColor="#aaffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="◄  100% chuẩn  ►" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="12.0sp" android:textColor="#88ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="300%" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <Button android:textColor="#ffffffff" android:id="@id/btn_zoom_reset" android:background="@drawable/zoom_button_bg" android:focusable="true" android:nextFocusUp="@id/zoom_seekbar" android:nextFocusDown="@id/btn_zoom_close" android:layout_width="fill_parent" android:layout_height="44.0dip" android:text="↺  Reset 100%" />
+</LinearLayout>

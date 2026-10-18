@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/epg_item_root" android:background="?android:selectableItemBackground" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="12.0dip" android:paddingEnd="12.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/epg_item_start" android:background="@drawable/epg_time_chip" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="monospace" android:paddingStart="7.0dip" android:paddingEnd="7.0dip" />
+        <TextView android:textSize="11.0sp" android:textColor="#88ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip" />
+        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/epg_item_end" android:background="@drawable/epg_time_chip" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="monospace" android:paddingStart="7.0dip" android:paddingEnd="7.0dip" />
+        <TextView android:textSize="11.0sp" android:textColor="#88ffffff" android:id="@id/epg_item_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8.0dip" />
+        <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+        <TextView android:textSize="10.0sp" android:textStyle="bold" android:textColor="#ffff2222" android:id="@id/epg_live_badge" android:background="@drawable/epg_live_chip" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="● ĐANG PHÁT" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" />
+    </LinearLayout>
+    <TextView android:textSize="13.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/epg_item_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:maxLines="2" />
+    <FrameLayout android:id="@id/epg_progress_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+        <View android:layout_gravity="center_vertical" android:background="#33ffffff" android:layout_width="fill_parent" android:layout_height="3.0dip" />
+        <android.widget.ProgressBar android:id="@id/epg_item_progress" android:layout_width="fill_parent" android:layout_height="3.0dip" android:max="100" android:progressDrawable="@drawable/epg_progress_drawable" style="?android:progressBarStyleHorizontal" />
+    </FrameLayout>
+</LinearLayout>

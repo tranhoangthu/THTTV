@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tvstore.ok.CustomTitleView android:paddingTop="24.0dip" android:paddingBottom="24.0dip" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="24.0dip" android:paddingEnd="24.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/title_left_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentStart="true">
+        <ImageView android:id="@id/custom_title_badge" android:visibility="gone" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginEnd="8.0dip" />
+        <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:id="@id/custom_title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+    <androidx.leanback.widget.SearchOrbView android:id="@id/custom_title_orb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+</com.tvstore.ok.CustomTitleView>
