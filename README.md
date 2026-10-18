@@ -1,6 +1,6 @@
 # THT TV - XemTV (v1.0)
 ### Ứng Dụng Xem Truyền Hình Đa Nền Tảng (Android TV & Mobile)
-**Tác giả:** Trần Hoàng Thứ | **Application ID:** `com.thttv` | **Phiên bản:** `1.0`
+**Application ID:** `com.thttv` | **Phiên bản:** `1.0`
 
 <p align="center">
   <img src="logos/tv_banner.png" alt="THT TV Banner" width="480">
@@ -23,8 +23,8 @@
   - Trọn bộ 11 kênh Giải Trí TV360 (360 Phim Việt, 360 K-Drama, 360 Anime...).
   - Trọn bộ 11 kênh Radio Zing MP3 chính thức.
   - Các luồng trực tiếp bóng đá, bình luận viên (COLA TV, GÀ VÀNG, KHÁN ĐÀI...).
-- **Hệ Thống Lịch Phát Sóng (EPG) & Kho Logo R2 Chuẩn HD**:
-  - Tích hợp trực tiếp nguồn EPG tốc độ cao: `https://epg.io.vn/epg.xml` và `https://epg.blaosolar.vn/schedule/epg.xml`.
+- **Hệ Thống Lịch Phát Sóng (EPG) & Kho Logo Sắc Nét**:
+  - Tích hợp trực tiếp nguồn EPG tốc độ cao và kho logo kênh truyền hình trực quan, sống động.
 
 ---
 
@@ -35,4 +35,3 @@ File cài đặt APK đã được build hoàn chỉnh và ký số:
 
 ---
 
-*Phát triển và bảo trì bởi tác giả **Trần Hoàng Thứ**.*
