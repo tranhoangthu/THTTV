@@ -8,11 +8,11 @@ android {
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.tvstore.ok"
+        applicationId "com.thttv"
         minSdk 21
         targetSdk 35
-        versionCode 9999
-        versionName "1.0.0-HTTV"
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
