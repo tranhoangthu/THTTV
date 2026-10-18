@@ -89,7 +89,7 @@ public final class MainFragment extends BrowseSupportFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Intrinsics.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        setTitle("XemTV24H - OkPlayer");
+        setTitle("HTTV - Xem TV");
         setBadgeDrawable(ContextCompat.getDrawable(requireActivity(), R.drawable.app_icon_your_company));
     }
 
@@ -98,7 +98,7 @@ public final class MainFragment extends BrowseSupportFragment {
         super.onActivityCreated(savedInstanceState);
         prepareBackgroundManager();
         setupUIElements();
-        setTitle("XemTV24H - OkPlayer");
+        setTitle("HTTV - Xem TV");
         setBadgeDrawable(ContextCompat.getDrawable(requireActivity(), R.drawable.app_icon_your_company));
         prepareEntranceTransition();
         loadRows();
@@ -187,7 +187,7 @@ public final class MainFragment extends BrowseSupportFragment {
     }
 
     private final void setupUIElements() {
-        setTitle("XemTV24H - OkPlayer");
+        setTitle("HTTV - Xem TV");
         setBadgeDrawable(ContextCompat.getDrawable(requireActivity(), R.drawable.app_icon_your_company));
         setHeadersState(1);
         setHeadersTransitionOnBackEnabled(true);
@@ -200,12 +200,7 @@ public final class MainFragment extends BrowseSupportFragment {
         });
         setBrandColor(ContextCompat.getColor(requireActivity(), R.color.fastlane_background));
         setSearchAffordanceColor(ContextCompat.getColor(requireActivity(), R.color.search_opaque));
-        setOnSearchClickedListener(new View.OnClickListener() { // from class: com.tvstore.ok.MainFragment$$ExternalSyntheticLambda30
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                r0.startActivity(new Intent(MainFragment.this.requireActivity(), (Class<?>) SearchActivity.class));
-            }
-        });
+        setOnSearchClickedListener(null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -787,7 +782,7 @@ public final class MainFragment extends BrowseSupportFragment {
                 java.lang.String r12 = ""
             L45:
                 java.lang.CharSequence r12 = (java.lang.CharSequence) r12
-                java.lang.String r5 = "XemTV24H - OkPlayer"
+                java.lang.String r5 = "HTTV"
                 java.lang.CharSequence r5 = (java.lang.CharSequence) r5
                 r6 = 2
                 boolean r5 = kotlin.text.StringsKt.contains$default(r12, r5, r2, r6, r4)

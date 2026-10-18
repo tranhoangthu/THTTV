@@ -162,8 +162,8 @@ public final class PlaybackActivity extends FragmentActivity {
     private final Handler handler = new Handler(Looper.getMainLooper());
     private final PlaybackActivity$updateInfoRunnable$1 updateInfoRunnable = new PlaybackActivity$updateInfoRunnable$1(this);
     private final StringBuilder channelNumberBuffer = new StringBuilder();
-    private final long CHANNEL_INPUT_TIMEOUT = 1500;
-    private final int MAX_CHANNEL_DIGITS = 3;
+    private final long CHANNEL_INPUT_TIMEOUT = 2500;
+    private final int MAX_CHANNEL_DIGITS = 5;
     private List<Movie> allChannels = CollectionsKt.emptyList();
     private final Handler seekHandler = new Handler(Looper.getMainLooper());
     private int dvdSeekSpeed = 1;

@@ -94,7 +94,7 @@ public final class TvHomeManager {
         } catch (Exception e2) {
             Log.e(TAG, "Lỗi truy vấn channel", e2);
         }
-        Channel.Builder displayName = new Channel.Builder().setType(TvContractCompat.Channels.TYPE_PREVIEW).setDisplayName("XemTV24H - OkPlayer");
+        Channel.Builder displayName = new Channel.Builder().setType(TvContractCompat.Channels.TYPE_PREVIEW).setDisplayName("HTTV");
         Uri parse = Uri.parse("ok://home");
         Intrinsics.checkNotNullExpressionValue(parse, "parse(this)");
         try {

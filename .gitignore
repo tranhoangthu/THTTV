@@ -7,3 +7,8 @@
 /captures
 .externalNativeBuild
 .cxx
+*.xml
+!app/src/main/res/**
+!app/src/main/AndroidManifest.xml
+vietanhtv.m3u
+vietxiaomi.m3u

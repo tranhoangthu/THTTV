@@ -183,7 +183,7 @@ public final class PlaybackVideoFragment extends Fragment {
         if (movie == null || (videoUrl = movie.getVideoUrl()) == null) {
             return;
         }
-        String obj = StringsKt.trim((CharSequence) videoUrl).toString();
+        String obj = StreamFailoverManager.getCurrentStreamUrl(StringsKt.trim((CharSequence) videoUrl).toString());
         String category2 = movie.getCategory();
         if ((category2 != null && StringsKt.contains$default((CharSequence) category2, (CharSequence) "Image", false, 2, (Object) null)) || ((category = movie.getCategory()) != null && StringsKt.contains$default((CharSequence) category, (CharSequence) "🖼️", false, 2, (Object) null))) {
             ImageView imageView = this.localImageView;
@@ -537,11 +537,11 @@ public final class PlaybackVideoFragment extends Fragment {
 
                 @Override // androidx.media3.common.Player.Listener
                 public void onPlayerError(PlaybackException error) {
-                    ProgressBar progressBar2;
-                    String str2;
-                    TextView textView;
-                    TextView textView2;
                     Intrinsics.checkNotNullParameter(error, "error");
+                    if (StreamFailoverManager.tryNextServer(PlaybackVideoFragment.this.getContext(), PlaybackVideoFragment.this.getExoPlayer())) {
+                        return;
+                    }
+                    ProgressBar progressBar2;
                     progressBar2 = PlaybackVideoFragment.this.loadingSpinner;
                     if (progressBar2 != null) {
                         progressBar2.setVisibility(8);
