@@ -342,6 +342,10 @@ public final class MovieList {
         getMovies(callback);
     }
 
+    public final void clearCache() {
+        movies = CollectionsKt.emptyList();
+    }
+
     public final boolean toggleFavorite(Context context, Movie movie) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(movie, "movie");
@@ -516,43 +520,75 @@ public final class MovieList {
 
     public final List<String> getCategories() {
         List<Movie> list = movies;
-        ArrayList arrayList = new ArrayList();
-        Iterator<T> it = list.iterator();
-        while (it.hasNext()) {
-            String category = ((Movie) it.next()).getCategory();
-            if (category != null) {
-                arrayList.add(category);
+        if (list == null) return CollectionsKt.emptyList();
+        ArrayList<String> foundCats = new ArrayList<>();
+        for (Movie m : list) {
+            if (m != null) {
+                String category = m.getCategory();
+                if (category != null && !category.isEmpty() && !foundCats.contains(category)) {
+                    foundCats.add(category);
+                }
             }
         }
-        List distinct = CollectionsKt.distinct(arrayList);
-        ArrayList arrayList2 = new ArrayList();
-        for (Object obj : distinct) {
-            if (!INSTANCE.isCategoryHidden((String) obj)) {
-                arrayList2.add(obj);
+
+        List<String> ORDERED_CATS = java.util.Arrays.asList(
+            "Xem Gần Đây", "Yêu Thích", "VTV", "Thiết Yếu", "Thiết yếu", "HTV", "HTVC", "VTVcab", "SCTV",
+            "Vĩnh Long", "Địa Phương", "Địa phương", "In The Box", "Giải Trí", "Thể Thao", "Thể thao",
+            "THỂ THAO QUỐC TẾ", "Thể thao quốc tế", "Sự Kiện TV360", "Sự Kiện VTVPrime", "Sự Kiện FPT PLAY",
+            "LIVE EVENTS", "TVB", "Quốc Tế", "Radio", "Radio ZingMP3", "Khác"
+        );
+
+        ArrayList<String> sorted = new ArrayList<>();
+        if (!getHistoryMovies().isEmpty() && !INSTANCE.isCategoryHidden("Xem Gần Đây")) {
+            sorted.add("Xem Gần Đây");
+        }
+
+        for (String ord : ORDERED_CATS) {
+            if (ord.equals("Xem Gần Đây")) continue;
+            for (String fc : foundCats) {
+                if (ord.equalsIgnoreCase(fc) && !INSTANCE.isCategoryHidden(fc) && !sorted.contains(fc)) {
+                    sorted.add(fc);
+                }
             }
         }
-        return arrayList2;
+
+        for (String fc : foundCats) {
+            if (!sorted.contains(fc) && !INSTANCE.isCategoryHidden(fc)) {
+                sorted.add(fc);
+            }
+        }
+
+        return sorted;
     }
 
     public final List<String> getAllCategories() {
         List<Movie> list = movies;
-        ArrayList arrayList = new ArrayList();
-        Iterator<T> it = list.iterator();
-        while (it.hasNext()) {
-            String category = ((Movie) it.next()).getCategory();
-            if (category != null) {
-                arrayList.add(category);
+        if (list == null) return CollectionsKt.emptyList();
+        ArrayList<String> foundCats = new ArrayList<>();
+        for (Movie m : list) {
+            if (m != null) {
+                String category = m.getCategory();
+                if (category != null && !category.isEmpty() && !foundCats.contains(category)) {
+                    foundCats.add(category);
+                }
             }
         }
-        return CollectionsKt.distinct(arrayList);
+        return foundCats;
     }
 
     public final List<Movie> getMoviesByCategory(String category) {
         Intrinsics.checkNotNullParameter(category, "category");
+        if (category.equalsIgnoreCase("Xem Gần Đây") || category.equalsIgnoreCase("Gần đây")) {
+            return getHistoryMovies();
+        }
+        if (category.equalsIgnoreCase("Yêu Thích") || category.equalsIgnoreCase("❤️ Yêu thích")) {
+            return getFavoriteMovies();
+        }
         List<Movie> list = movies;
-        ArrayList arrayList = new ArrayList();
-        for (Object obj : list) {
-            if (Intrinsics.areEqual(((Movie) obj).getCategory(), category)) {
+        ArrayList<Movie> arrayList = new ArrayList<>();
+        if (list == null) return arrayList;
+        for (Movie obj : list) {
+            if (obj != null && category.equalsIgnoreCase(obj.getCategory())) {
                 arrayList.add(obj);
             }
         }

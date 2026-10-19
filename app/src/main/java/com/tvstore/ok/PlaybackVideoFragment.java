@@ -1337,4 +1337,12 @@ public final class PlaybackVideoFragment extends Fragment {
         }
         this.exoPlayer = null;
     }
+
+    public final void switchServer() {
+        ExoPlayer player = this.exoPlayer;
+        if (player != null) {
+            StreamFailoverManager.switchNextServer(getContext(), player);
+        }
+    }
 }
+

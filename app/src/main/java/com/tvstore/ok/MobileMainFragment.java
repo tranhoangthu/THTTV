@@ -554,7 +554,7 @@ public final class MobileMainFragment extends Fragment {
                 mobileMainFragment.showSourceManager();
                 return;
             case 2:
-                mobileMainFragment.refreshSourceData();
+                AppHelper.refreshSourceData(mobileMainFragment);
                 return;
             case 3:
                 mobileMainFragment.showCategoryVisibilityManager();
@@ -580,16 +580,7 @@ public final class MobileMainFragment extends Fragment {
     }
 
     private final void refreshSourceData() {
-        Toast.makeText(requireActivity(), "Đang cập nhật dữ liệu...", 0).show();
-        MovieList movieList = MovieList.INSTANCE;
-        FragmentActivity requireActivity = requireActivity();
-        Intrinsics.checkNotNullExpressionValue(requireActivity, "requireActivity(...)");
-        movieList.refreshFromSource(requireActivity, new Function1() { // from class: com.tvstore.ok.MobileMainFragment$$ExternalSyntheticLambda25
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                return MobileMainFragment.refreshSourceData$lambda$25(MobileMainFragment.this, (List) obj);
-            }
-        });
+        AppHelper.refreshSourceData(this);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

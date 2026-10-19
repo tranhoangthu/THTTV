@@ -578,6 +578,24 @@ public final class PlaybackActivity extends FragmentActivity {
                 }
             });
         }
+        View findViewByIdSwitch = findViewById(R.id.btn_switch_server);
+        if (findViewByIdSwitch != null) {
+            findViewByIdSwitch.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PlaybackActivity.this.switchServer();
+                }
+            });
+        }
+        View findViewByIdSwitchInfo = findViewById(R.id.btn_switch_server_info);
+        if (findViewByIdSwitchInfo != null) {
+            findViewByIdSwitchInfo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PlaybackActivity.this.switchServer();
+                }
+            });
+        }
         View findViewById40 = findViewById(R.id.audio_overlay);
         Intrinsics.checkNotNullExpressionValue(findViewById40, "findViewById(...)");
         this.audioOverlay = (RelativeLayout) findViewById40;
@@ -2853,6 +2871,10 @@ public final class PlaybackActivity extends FragmentActivity {
     }
 
     private final void handleSinglePressAction(int keyCode, boolean isVod, PlaybackVideoFragment fragment) {
+        if (keyCode == 185 || keyCode == 186 || keyCode == 184 || keyCode == 87) {
+            switchServer();
+            return;
+        }
         if (keyCode != 66) {
             switch (keyCode) {
                 case 21:
@@ -3545,4 +3567,12 @@ public final class PlaybackActivity extends FragmentActivity {
         }
         finish();
     }
+
+    public final void switchServer() {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.video_fragment_container);
+        if (fragment instanceof PlaybackVideoFragment) {
+            ((PlaybackVideoFragment) fragment).switchServer();
+        }
+    }
 }
+

@@ -52,40 +52,51 @@ public class AppHelper {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    URL url = new URL(PLAYLIST_URL);
-                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                    conn.setConnectTimeout(8000);
-                    conn.setReadTimeout(12000);
-                    conn.setRequestProperty("User-Agent", "Mozilla/5.0");
-                    conn.connect();
-                    if (conn.getResponseCode() == 200) {
-                        File targetFile = new File(context.getFilesDir(), "httv_playlist.m3u");
-                        File tempFile = new File(context.getFilesDir(), "httv_playlist.m3u.tmp");
-                        InputStream is = conn.getInputStream();
-                        FileOutputStream fos = new FileOutputStream(tempFile);
-                        byte[] buf = new byte[8192];
-                        int len;
-                        while ((len = is.read(buf)) > 0) {
-                            fos.write(buf, 0, len);
-                        }
-                        fos.flush();
-                        fos.close();
-                        is.close();
-
-                        if (tempFile.length() > 500) {
-                            if (targetFile.exists()) {
-                                targetFile.delete();
+                String[] candidateUrls = new String[] {
+                    PLAYLIST_URL,
+                    "https://cdn.jsdelivr.net/gh/tranhoangthu/THTTV@main/playlist.m3u",
+                    "https://raw.githubusercontent.com/tranhoangthu/HTTV/main/playlist.m3u"
+                };
+                boolean downloaded = false;
+                for (String urlStr : candidateUrls) {
+                    try {
+                        URL url = new URL(urlStr);
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setConnectTimeout(7000);
+                        conn.setReadTimeout(12000);
+                        conn.setRequestProperty("User-Agent", "Mozilla/5.0");
+                        conn.connect();
+                        if (conn.getResponseCode() == 200) {
+                            File targetFile = new File(context.getFilesDir(), "httv_playlist.m3u");
+                            File tempFile = new File(context.getFilesDir(), "httv_playlist.m3u.tmp");
+                            InputStream is = conn.getInputStream();
+                            FileOutputStream fos = new FileOutputStream(tempFile);
+                            byte[] buf = new byte[8192];
+                            int len;
+                            while ((len = is.read(buf)) > 0) {
+                                fos.write(buf, 0, len);
                             }
-                            tempFile.renameTo(targetFile);
-                            Log.d(TAG, "Đã tải thành công playlist.m3u mới (" + targetFile.length() + " bytes)");
-                        } else {
-                            tempFile.delete();
+                            fos.flush();
+                            fos.close();
+                            is.close();
+
+                            if (tempFile.length() > 500) {
+                                if (targetFile.exists()) {
+                                    targetFile.delete();
+                                }
+                                tempFile.renameTo(targetFile);
+                                Log.d(TAG, "Đã tải thành công playlist mới từ " + urlStr + " (" + targetFile.length() + " bytes)");
+                                downloaded = true;
+                                conn.disconnect();
+                                break;
+                            } else {
+                                tempFile.delete();
+                            }
                         }
+                        conn.disconnect();
+                    } catch (Exception e) {
+                        Log.w(TAG, "Lỗi tải playlist từ " + urlStr + ": " + e.getMessage());
                     }
-                    conn.disconnect();
-                } catch (Exception e) {
-                    Log.e(TAG, "Lỗi tải playlist", e);
                 }
 
                 if (onDone != null) {
@@ -101,11 +112,12 @@ public class AppHelper {
             final Activity act = fragment.getActivity();
             if (act == null || act.isFinishing()) return;
 
-            Toast.makeText(act, "Đang tải và cập nhật danh sách kênh mới...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(act, "Đang tải và cập nhật dữ liệu nguồn mới...", Toast.LENGTH_SHORT).show();
             downloadLatestPlaylist(act.getApplicationContext(), new Runnable() {
                 @Override
                 public void run() {
                     try {
+                        MovieList.INSTANCE.clearCache();
                         MovieList.INSTANCE.getMovies(new Function1<List<Movie>, Unit>() {
                             @Override
                             public Unit invoke(final List<Movie> list) {
@@ -118,7 +130,7 @@ public class AppHelper {
                                             if (currentAct == null || currentAct.isFinishing()) return;
 
                                             if (list != null && !list.isEmpty()) {
-                                                Toast.makeText(currentAct, "✅ Đã cập nhật " + list.size() + " kênh mới nhất!", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(currentAct, "✅ Đã cập nhật xong " + list.size() + " kênh mới nhất!", Toast.LENGTH_SHORT).show();
                                                 if (fragment instanceof MainFragment) {
                                                     ((MainFragment) fragment).rebuildAdapter();
                                                 } else if (fragment instanceof MobileMainFragment) {
@@ -130,7 +142,7 @@ public class AppHelper {
                                                     Log.e(TAG, "Lỗi cập nhật TvHomeManager", th);
                                                 }
                                             } else {
-                                                Toast.makeText(currentAct, "❌ Không thể cập nhật danh sách!", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(currentAct, "❌ Không thể tải danh sách kênh mới!", Toast.LENGTH_SHORT).show();
                                             }
                                         } catch (Throwable t) {
                                             Log.e(TAG, "Lỗi cập nhật UI sau khi tải danh sách", t);

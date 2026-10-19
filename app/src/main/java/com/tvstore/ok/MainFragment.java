@@ -969,7 +969,7 @@ public final class MainFragment extends BrowseSupportFragment {
                 return;
             }
             if (StringsKt.contains$default((CharSequence) text, (CharSequence) "dữ liệu nguồn", false, 2, (Object) null)) {
-                mainFragment.refreshSourceData();
+                AppHelper.refreshSourceData(mainFragment);
                 return;
             }
             if (StringsKt.contains$default((CharSequence) text, (CharSequence) "Mobile", false, 2, (Object) null)) {
@@ -990,13 +990,7 @@ public final class MainFragment extends BrowseSupportFragment {
     }
 
     private final void refreshSourceData() {
-        Toast.makeText(requireActivity(), "Đang cập nhật dữ liệu...", 0).show();
-        MovieList.INSTANCE.getMovies(new Function1() { // from class: com.tvstore.ok.MainFragment$$ExternalSyntheticLambda22
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                return MainFragment.refreshSourceData$lambda$59(MainFragment.this, (List) obj);
-            }
-        });
+        AppHelper.refreshSourceData(this);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

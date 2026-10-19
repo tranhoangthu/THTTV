@@ -86,8 +86,38 @@ public final class StreamFailoverManager {
         if (context != null) {
             Toast.makeText(context, "Đổi sang server dự phòng (" + (serverIndex + 1) + "/" + serverList.size() + ")...", Toast.LENGTH_SHORT).show();
         }
-        MediaItem.Builder uri = new MediaItem.Builder().setUri(Uri.parse(str));
-        if (str.toLowerCase().contains(".mpd")) {
+        applyServerToPlayer(context, exoPlayer, str);
+        return true;
+    }
+
+    public static boolean switchNextServer(Context context, ExoPlayer exoPlayer) {
+        cancelTimeout();
+        List<String> list = serverList;
+        if (list == null || list.isEmpty() || exoPlayer == null) {
+            if (context != null) {
+                Toast.makeText(context, "Kênh này chỉ có 1 nguồn phát!", Toast.LENGTH_SHORT).show();
+            }
+            return false;
+        }
+        if (list.size() == 1) {
+            if (context != null) {
+                Toast.makeText(context, "Kênh chỉ có 1 Server nguồn. Đang kết nối lại...", Toast.LENGTH_SHORT).show();
+            }
+            applyServerToPlayer(context, exoPlayer, list.get(0));
+            return true;
+        }
+        serverIndex = (serverIndex + 1) % list.size();
+        String str = list.get(serverIndex);
+        if (context != null) {
+            Toast.makeText(context, "🔀 Đã đổi sang Server (" + (serverIndex + 1) + "/" + list.size() + ")", Toast.LENGTH_SHORT).show();
+        }
+        applyServerToPlayer(context, exoPlayer, str);
+        return true;
+    }
+
+    private static void applyServerToPlayer(Context context, ExoPlayer exoPlayer, String url) {
+        MediaItem.Builder uri = new MediaItem.Builder().setUri(Uri.parse(url));
+        if (url.toLowerCase().contains(".mpd")) {
             uri.setMimeType("application/dash+xml");
         } else {
             uri.setMimeType("application/x-mpegURL");
@@ -96,7 +126,7 @@ public final class StreamFailoverManager {
         exoPlayer.prepare();
         exoPlayer.setPlayWhenReady(true);
         onBuffering(context, exoPlayer);
-        return true;
     }
 }
+
 

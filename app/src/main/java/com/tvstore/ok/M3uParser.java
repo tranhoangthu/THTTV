@@ -174,6 +174,12 @@ public final class M3uParser {
                 if (str10 == null) {
                     str10 = "Khác";
                 }
+                str10 = cleanCategory(str10);
+                String tvgIdLower = movie2.getTvgId() != null ? movie2.getTvgId().toLowerCase() : "";
+                String titleLower = movie2.getTitle() != null ? movie2.getTitle().toLowerCase() : "";
+                if (tvgIdLower.startsWith("thvl") || titleLower.startsWith("thvl") || titleLower.contains("vĩnh long") || tvgIdLower.contains("vinhlong")) {
+                    str10 = "Vĩnh Long";
+                }
                 movie2.setCategory(str10);
                 movie2.setStudio(movie2.getCategory());
                 movie = movie2;
@@ -260,7 +266,9 @@ public final class M3uParser {
                             String videoUrl = movie.getVideoUrl();
                             movie.setTitle((videoUrl == null || (substringAfterLast$default = StringsKt.substringAfterLast$default(videoUrl, "/", (String) null, 2, (Object) null)) == null) ? null : StringsKt.substringBefore$default(substringAfterLast$default, "?", (String) null, 2, (Object) null));
                         }
-                        arrayList.add(movie);
+                        if (!isLiveSportsMirror(movie.getTitle(), movie.getCategory())) {
+                            arrayList.add(movie);
+                        }
                         movie = null;
                     }
                 }
@@ -271,4 +279,23 @@ public final class M3uParser {
         Log.d(TAG, "Parsed " + arrayList.size() + " movies");
         return arrayList;
     }
+
+    public static final String cleanCategory(String raw) {
+        if (raw == null) return "Khác";
+        String s = raw.replaceAll("[\\uD83C-\\uDBFF\\uDC00-\\uDFFF\\u2600-\\u27BF\\uFE0F\\u200D]", "");
+        s = s.replaceFirst("^[\\|•\\-–—\\s]+", "");
+        s = s.replaceAll("\\s+", " ").trim();
+        return s.isEmpty() ? "Khác" : s;
+    }
+
+    public static final boolean isLiveSportsMirror(String title, String group) {
+        if (title == null) title = "";
+        if (group == null) group = "";
+        String s = (title + " " + group).toLowerCase();
+        return s.contains("gà vàng") || s.contains("gavang") ||
+               s.contains("cola") ||
+               s.contains("khán đài") || s.contains("khandai") ||
+               s.contains("xôi chè") || s.contains("xoiche");
+    }
 }
+
