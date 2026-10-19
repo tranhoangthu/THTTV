@@ -37,6 +37,8 @@ https://vmttv.dpdns.org/tv360/?id=vtv9|https://vtvgolive-sctvdrm.vtvdigital.vn/m
 #EXTINF:-1 tvg-id="vtv10hd" tvg-name="VTV10" tvg-logo="https://image3.blaosolar.vn/logo/vtv10hd.jpg" group-title="VTV",VTV10
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
 https://vmttv.dpdns.org/tv360/?id=vtv10|https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/vtv6/master.m3u8|https://tv.vietanhtv.top/tv360/tv360.php?id=98&expires=1792290363&token=5decb38318c4def02e23fd2e236cc9b0|https://s7486.cdn.mytvnet.vn/pkg20/__cl/gvtsig/vstv263/manifest.mpd
+#EXTINF:-1 tvg-id="kenhthunghiem4k" tvg-name="Kênh Thử Nghiệm 4K" tvg-logo="https://vnepg.site/logo/vtv1.png" group-title="VTV",Kênh Thử Nghiệm 4K
+https://test.stream/live.m3u8|https://backup.stream/live.m3u8
 #EXTINF:-1 tvg-id="htv1" tvg-name="HTV1" tvg-logo="https://image2.blaosolar.vn/logo/htv1.jpg" group-title="HTV",HTV1
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
 https://freem3u.xyz/api/live/play.m3u8?vid=190|https://tv.vietanhtv.top/tv360/tv360.php?id=190&expires=1792290363&token=2cb9792a90e2f9b6b305261e2ae48dbc|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/htv1/KenhCoBan.m3u8|https://live.fptplay53.net/epzhd1/htv1_hls.smil/chunklist.m3u8
@@ -90,7 +92,7 @@ https://vmttv.dpdns.org/tv360/?id=vtvcab-2-phim-viet-hd|https://livevlisctcdnw.s
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=f3d73b3a9b89462ebf7911004ea3b3b9:2e547a81ff90aa02648cb9e3f79e7339
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://livevlisctcdnw.seenow.vn/Live_DASHDRM2/THETHAO_HD/manifest.mpd|http://aismile.dpdns.org/play/Xp0xPSl85wdNA55xBqtBGdOOvy-m3p9K5-Cg-HdYvfk/ts|https://tv.vietanhtv.top/tv360/tv360.php?id=173&expires=1792290363&token=447d1ece4b9944e770743263decb389f|https://tivixiaomi.vn/iptv/c.php?k=onsports
+https://livevlisctcdnw.seenow.vn/Live_DASHDRM2/THETHAO_HD/manifest.mpd|http://aismile.dpdns.org/play/Xp0xPSl85wdNA55xBqtBGdOOvy-m3p9K5-Cg-HdYvfk/ts|http://aismile.dpdns.org/play/Xp0xPSl85wdNA55xBqtBGdjvrwZKrL-vbYz4nY_dUms/ts|https://tv.vietanhtv.top/tv360/tv360.php?id=173&expires=1792290363&token=447d1ece4b9944e770743263decb389f
 #EXTINF:-1 tvg-id="onmovies" tvg-name="On Movies - You TV" tvg-logo="https://image1.blaosolar.vn/logo/on-movies.jpg" group-title="VTVcab",On Movies - You TV
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
 https://freem3u.xyz/api/live/play.m3u8?vid=181|https://livevlisctcdnw.seenow.vn/livesnv2/VAN_HOA/manifest.mpd|https://tv.vietanhtv.top/tv360/tv360.php?id=181&expires=1792290363&token=6c090464443a2abbcd0f4f0f406cbce3|https://tivixiaomi.vn/iptv/c.php?k=onmovies
@@ -732,8 +734,7 @@ https://freem3u.xyz/api/live/play.m3u8?vid=10040
 #EXTINF:-1 tvg-id="bacninhradio" tvg-name="Bắc Ninh" tvg-logo="https://image1.blaosolar.vn/logo/bacninh.png" group-title="Radio",Bắc Ninh
 https://live.mediatech.vn/live/285acd5e43b501e4c21b0af4e55810625c8/chunklist.m3u8|https://live.mediatech.vn/live/285f5f227e988ab4445a2138091d3d62e8d/playlist.m3u8|http://118.107.85.4:1935/radio/bacninh_aac/playlist.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/bac-ninh/KenhCoBan.m3u8
 #EXTINF:-1 tvg-id="camauradio" tvg-name="Cà Mau" tvg-logo="https://image1.blaosolar.vn/logo/camau.png" group-title="Radio",Cà Mau
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36
-http://tv.ctvcamau.vn/live/radio/radio.m3u8|https://freem3u.xyz/api/live/play.m3u8?vid=46|https://tv.vietanhtv.top/tv360/tv360.php?id=46&expires=1792290363&token=c9fcb62ed9ce13e4ded76ba7b477e7b4|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/ca-mau/KenhCoBan.m3u8
+http://tv.ctvcamau.vn/live/radio/radio.m3u8|https://freem3u.xyz/api/live/play.m3u8?vid=46|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/ca-mau/KenhCoBan.m3u8|https://tv.ctvcamau.vn/live/tv/tv.m3u8
 #EXTINF:-1 tvg-id="canthoradio1" tvg-name="Cần Thơ Radio 1" tvg-logo="https://canthoplus.vn/storage/channels/9b7858d5-ff44-43b3-94ab-e4d66a54f1bd.png" group-title="Radio",Cần Thơ Radio 1
 https://live.canthotv.vn/live/radio/chunklist_w1780522487.m3u8
 #EXTINF:-1 tvg-id="canthoradio2" tvg-name="Cần Thơ Radio 2" tvg-logo="https://canthoplus.vn/storage/channels/d18742e3-5735-43ea-9001-77678b4ef751.png" group-title="Radio",Cần Thơ Radio 2
@@ -745,8 +746,8 @@ https://cdn.drt.vn/live/285054c4567dea54b3fb14bfd60d61230b5/chunklist.m3u8|https
 #EXTINF:-1 tvg-id="dongnai" tvg-name="Đồng Nai" tvg-logo="https://raw.githubusercontent.com/vuminhthanh12/Logo/refs/heads/main/dongnaifm.png" group-title="Radio",Đồng Nai
 http://118.107.85.5:1935/radio/dongnai_aac/playlist.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/dong-nai/KenhCoBan.m3u8
 #EXTINF:-1 tvg-id="dongthapradio" tvg-name="Đồng Tháp" tvg-logo="https://image.voh.com.vn/voh/image/2023/12/27/thumbnail-dai-dong-thap-app-102539.jpg" group-title="Radio",Đồng Tháp
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-https://64d0d74b76158.streamlock.net/THDTR/thdtradio/chunklist.m3u8|https://618b88f69e53b.streamlock.net/THDT/thdttv/chunklist_w231972584.m3u8
+#EXTVLCOPT:http-user-agent=Dalvik/2.1.0
+https://64d0d74b76158.streamlock.net/THDTR/thdtradio/chunklist.m3u8|https://tv.vietanhtv.top/vieon/vieon.php?id=dong-thap-1|https://618b88f69e53b.streamlock.net/THDT/thdttv/chunklist_w231972584.m3u8
 #EXTINF:-1 tvg-id="hanoi90" tvg-name="Hà Nội FM 90" tvg-logo="https://image.voh.com.vn/voh/image/2024/03/08/dai-ha-noi-5_90mhz---3-01-111825.jpg" group-title="Radio",Hà Nội FM 90
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
 https://freem3u.xyz/api/live/play.m3u8?vid=9905|https://sgchill.io.vn/360/9905/index.m3u8
@@ -756,8 +757,7 @@ https://freem3u.xyz/api/live/play.m3u8?vid=9906|https://sgchill.io.vn/360/9906/i
 #EXTINF:-1 tvg-id="hatinhradio" tvg-name="Hà Tĩnh" tvg-logo="https://image4.blaosolar.vn/logo/hatinh.jpg" group-title="Radio",Hà Tĩnh
 https://wse.hatinhtv.net/radio/voht/playlist.m3u8|https://cohauw9bgpvod.vcdn.cloud/httv1/index.m3u8|https://wse.hatinhtv.net/live/httv1/playlist.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/ha-tinh/KenhCoBan.m3u8
 #EXTINF:-1 tvg-id="hungyenradio" tvg-name="Hưng Yên" tvg-logo="https://image1.blaosolar.vn/logo/hungyen.png" group-title="Radio",Hưng Yên
-#EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://live.mediatech.vn/live/285b6e443bc30734725a940da8b0629655b/chunklist.m3u8|https://vmttv.dpdns.org/tv360/?id=hung-yen|https://live.mediatech.vn/live/285f5449d7d7d2946e0bd2d54b7e60f25a4/playlist.m3u8|https://live.mediatech.vn/live/285f5449d7d7d2946e0bd2d54b7e60f25a4/chunklist.m3u8
+https://live.mediatech.vn/live/285b6e443bc30734725a940da8b0629655b/chunklist.m3u8|https://live.mediatech.vn/live/285f5449d7d7d2946e0bd2d54b7e60f25a4/playlist.m3u8|http://103.90.220.236/hytvlive/radio.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/hung-yen/KenhCoBan.m3u8
 #EXTINF:-1 tvg-id="angiangradio1" tvg-name="4 Mhz" tvg-logo="https://angiangtv.vn/wp-content/uploads/2025/06/H6.png" group-title="Radio",4 Mhz
 #EXTVLCOPT:http-user-agent=VThanhTivi
 https://tv.angiangtv.vn/live/kgaudio/kgaudio.m3u8
