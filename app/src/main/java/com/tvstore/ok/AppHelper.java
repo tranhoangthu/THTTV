@@ -20,7 +20,7 @@ import kotlin.jvm.functions.Function1;
 
 public class AppHelper {
     private static final String TAG = "AppHelper";
-    public static final String PLAYLIST_URL = "https://raw.githubusercontent.com/tranhoangthu/HTTV/main/playlist.m3u";
+    public static final String PLAYLIST_URL = "https://raw.githubusercontent.com/tranhoangthu/THTTV/main/playlist.m3u";
 
     public static void checkAutoPlayLastChannel(Fragment fragment) {
         try {

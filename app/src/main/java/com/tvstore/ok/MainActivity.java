@@ -84,7 +84,7 @@ public final class MainActivity extends FragmentActivity {
 
     public static final Unit showAddSourceDialog$lambda$18(ProgressDialog progressDialog, MainActivity mainActivity, LicenseManager.LicenseStatus licenseStatus) {
         progressDialog.dismiss();
-        mainActivity.validateAndAddSource("HTTV - Xem TV", "https://raw.githubusercontent.com/tranhoangthu/HTTV/main/playlist.m3u", true);
+        mainActivity.validateAndAddSource("THT TV - Xem TV", "https://raw.githubusercontent.com/tranhoangthu/THTTV/main/playlist.m3u", true);
         return Unit.INSTANCE;
     }
 
@@ -92,7 +92,7 @@ public final class MainActivity extends FragmentActivity {
     }
 
     private final void validateAndAddSource(String name, String r10, boolean loadNow) {
-        MovieList.INSTANCE.addSource(this, "HTTV - Xem TV", "https://raw.githubusercontent.com/tranhoangthu/HTTV/main/playlist.m3u", true, new MainActivity$$ExternalSyntheticLambda13(this));
+        MovieList.INSTANCE.addSource(this, "THT TV - Xem TV", "https://raw.githubusercontent.com/tranhoangthu/THTTV/main/playlist.m3u", true, new MainActivity$$ExternalSyntheticLambda13(this));
     }
 
     public MainActivity() {

@@ -89,7 +89,7 @@ public final class MainFragment extends BrowseSupportFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Intrinsics.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        setTitle("HTTV - Xem TV");
+        setTitle("THT TV - XemTV");
         setBadgeDrawable(ContextCompat.getDrawable(requireActivity(), R.drawable.app_icon_your_company));
     }
 
@@ -98,7 +98,7 @@ public final class MainFragment extends BrowseSupportFragment {
         super.onActivityCreated(savedInstanceState);
         prepareBackgroundManager();
         setupUIElements();
-        setTitle("HTTV - Xem TV");
+        setTitle("THT TV - XemTV");
         setBadgeDrawable(ContextCompat.getDrawable(requireActivity(), R.drawable.app_icon_your_company));
         prepareEntranceTransition();
         loadRows();
@@ -187,7 +187,7 @@ public final class MainFragment extends BrowseSupportFragment {
     }
 
     private final void setupUIElements() {
-        setTitle("HTTV - Xem TV");
+        setTitle("THT TV - XemTV");
         setBadgeDrawable(ContextCompat.getDrawable(requireActivity(), R.drawable.app_icon_your_company));
         setHeadersState(1);
         setHeadersTransitionOnBackEnabled(true);

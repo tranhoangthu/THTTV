@@ -1,6 +1,6 @@
-# THT TV - XemTV (v1.0)
+# THT TV - XemTV (v1.0.1)
 ### Ứng Dụng Xem Truyền Hình Đa Nền Tảng (Android TV & Mobile)
-**Application ID:** `com.thttv` | **Phiên bản:** `1.0`
+**Application ID:** `com.thttv` | **Phiên bản:** `1.0.1`
 
 <p align="center">
   <img src="logos/app_icon_512.png" alt="THT TV Icon" width="130" style="border-radius: 28px;">

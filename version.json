@@ -1,12 +1,12 @@
 {
-  "tag_name": "v1.0",
-  "name": "THT TV - XemTV v1.0",
-  "body": "Phiên bản chính thức THT TV - XemTV 1.0\n- Cập nhật 453 kênh truyền hình Việt Nam, Thể thao, Giải trí TV360 và Zing MP3 Radio.\n- Tự động chuyển server dự phòng khi luồng chậm hoặc gián đoạn (> 3.5s).\n- Tự động mở lại kênh cuối cùng khi khởi động.",
-  "published_at": "2026-10-18T12:00:00Z",
+  "tag_name": "v1.0.1",
+  "name": "THT TV - XemTV v1.0.1",
+  "body": "Phiên bản THT TV - XemTV v1.0.1\n- Bộ nhận diện thương hiệu THT TV - Xem TV hoàn toàn mới (biểu tượng ứng dụng & TV banner tối giản, độ nhận diện cao).\n- Đồng bộ địa chỉ kho lưu trữ THTTV chính thức.\n- Trọn bộ 453 kênh truyền hình HD, VTV, Thể thao, Địa phương, Giải trí TV360 và Zing MP3 Radio.\n- Tự động chuyển server dự phòng khi luồng chậm (> 3.5s) và tự động mở lại kênh cuối cùng khi khởi động.",
+  "published_at": "2026-10-19T02:30:00Z",
   "assets": [
     {
-      "name": "THT_TV.apk",
-      "browser_download_url": "https://github.com/tranhoangthu/THTTV/releases/download/v1.0/HTTV.apk"
+      "name": "HTTV.apk",
+      "browser_download_url": "https://github.com/tranhoangthu/THTTV/releases/download/v1.0.1/HTTV.apk"
     }
   ]
 }
