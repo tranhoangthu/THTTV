@@ -3,6 +3,8 @@
 **Application ID:** `com.thttv` | **Phiên bản:** `1.0`
 
 <p align="center">
+  <img src="logos/app_icon_512.png" alt="THT TV Icon" width="130" style="border-radius: 28px;">
+  <br><br>
   <img src="logos/tv_banner.png" alt="THT TV Banner" width="480">
 </p>
 
