@@ -1,6 +1,6 @@
 #EXTM3U url-tvg="https://epg.io.vn/epg.xml, https://epg.blaosolar.vn/schedule/epg.xml"
-#EXTINF:-1 tvg-id="vtv1hd" tvg-name="VTV1" tvg-logo="https://image2.blaosolar.vn/logo/vtv1hd.jpg" group-title="VTV",VTV1
-https://freem3u.xyz/api/live/play.m3u8?vid=2|https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/vtv1/master.m3u8|https://cdnet-cdn-01.onsports.vn/onplus/VTV1_HD/manifest.mpd|https://live-on-cdn.sigmaott.com/manifest/vtv1/playlist_480p.m3u8
+#EXTINF:-1 tvg-id="vtv1hd" tvg-name="VTV1 Quốc Gia HD" tvg-logo="https://image2.blaosolar.vn/logo/vtv1hd.jpg" group-title="VTV",VTV1 Quốc Gia HD
+https://vtv1.test/live.m3u8
 #EXTINF:-1 tvg-id="vtv2hd" tvg-name="VTV2" tvg-logo="https://image3.blaosolar.vn/logo/vtv2hd.jpg" group-title="VTV",VTV2
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
 https://vmttv.dpdns.org/tv360/?id=vtv2|https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/vtv2/master.m3u8|https://tv.vietanhtv.top/tv360/tv360.php?id=3&expires=1792290363&token=c83751c6691553f87f68e6df7dfc1825|https://s7485.cdn.mytvnet.vn/pkg20/__cl/gvtsig/vstv451/manifest.mpd
