@@ -52,7 +52,6 @@ public class AppHelper {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                boolean success = false;
                 try {
                     URL url = new URL(PLAYLIST_URL);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -79,7 +78,6 @@ public class AppHelper {
                                 targetFile.delete();
                             }
                             tempFile.renameTo(targetFile);
-                            success = true;
                             Log.d(TAG, "Đã tải thành công playlist.m3u mới (" + targetFile.length() + " bytes)");
                         } else {
                             tempFile.delete();
@@ -98,33 +96,57 @@ public class AppHelper {
     }
 
     public static void refreshSourceData(final Fragment fragment) {
-        if (fragment == null || !fragment.isAdded()) return;
-        final Context ctx = fragment.getActivity();
-        if (ctx == null) return;
+        try {
+            if (fragment == null || !fragment.isAdded()) return;
+            final Activity act = fragment.getActivity();
+            if (act == null || act.isFinishing()) return;
 
-        Toast.makeText(ctx, "Đang tải và cập nhật danh sách kênh mới...", Toast.LENGTH_SHORT).show();
-        downloadLatestPlaylist(ctx, new Runnable() {
-            @Override
-            public void run() {
-                MovieList.INSTANCE.getMovies(new Function1<List<Movie>, Unit>() {
-                    @Override
-                    public Unit invoke(List<Movie> list) {
-                        if (fragment.isAdded()) {
-                            if (list != null && !list.isEmpty()) {
-                                Toast.makeText(ctx, "✅ Đã cập nhật " + list.size() + " kênh mới nhất!", Toast.LENGTH_SHORT).show();
-                                if (fragment instanceof MainFragment) {
-                                    ((MainFragment) fragment).rebuildAdapter();
-                                } else if (fragment instanceof MobileMainFragment) {
-                                    ((MobileMainFragment) fragment).forceReloadUI();
-                                }
-                            } else {
-                                Toast.makeText(ctx, "❌ Không thể cập nhật danh sách!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(act, "Đang tải và cập nhật danh sách kênh mới...", Toast.LENGTH_SHORT).show();
+            downloadLatestPlaylist(act.getApplicationContext(), new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        MovieList.INSTANCE.getMovies(new Function1<List<Movie>, Unit>() {
+                            @Override
+                            public Unit invoke(final List<Movie> list) {
+                                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            if (fragment == null || !fragment.isAdded()) return;
+                                            Activity currentAct = fragment.getActivity();
+                                            if (currentAct == null || currentAct.isFinishing()) return;
+
+                                            if (list != null && !list.isEmpty()) {
+                                                Toast.makeText(currentAct, "✅ Đã cập nhật " + list.size() + " kênh mới nhất!", Toast.LENGTH_SHORT).show();
+                                                if (fragment instanceof MainFragment) {
+                                                    ((MainFragment) fragment).rebuildAdapter();
+                                                } else if (fragment instanceof MobileMainFragment) {
+                                                    ((MobileMainFragment) fragment).forceReloadUI();
+                                                }
+                                                try {
+                                                    TvHomeManager.INSTANCE.updateHomeChannels(currentAct);
+                                                } catch (Throwable th) {
+                                                    Log.e(TAG, "Lỗi cập nhật TvHomeManager", th);
+                                                }
+                                            } else {
+                                                Toast.makeText(currentAct, "❌ Không thể cập nhật danh sách!", Toast.LENGTH_SHORT).show();
+                                            }
+                                        } catch (Throwable t) {
+                                            Log.e(TAG, "Lỗi cập nhật UI sau khi tải danh sách", t);
+                                        }
+                                    }
+                                });
+                                return Unit.INSTANCE;
                             }
-                        }
-                        return Unit.INSTANCE;
+                        });
+                    } catch (Throwable t2) {
+                        Log.e(TAG, "Lỗi nạp danh sách kênh mới", t2);
                     }
-                });
-            }
-        });
+                }
+            });
+        } catch (Throwable e) {
+            Log.e(TAG, "Lỗi trong refreshSourceData", e);
+        }
     }
 }
