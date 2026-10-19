@@ -153,7 +153,7 @@ public final class MainActivity extends FragmentActivity {
         });
         UpdateManager.checkUpdate$default(UpdateManager.INSTANCE, mainActivity, "hieu-TQS/ok", false, 4, null);
         NoticeManager.INSTANCE.checkNotice(mainActivity);
-        checkPermissionsAndScan();
+        // bypassed checkPermissionsAndScan();
         checkInitialSetup();
         Intent intent = getIntent();
         Intrinsics.checkNotNullExpressionValue(intent, "getIntent(...)");
@@ -249,26 +249,8 @@ public final class MainActivity extends FragmentActivity {
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     private final void checkPermissionsAndScan() {
-        String[] strArr;
-        if (Build.VERSION.SDK_INT >= 33) {
-            strArr = new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_AUDIO", "android.permission.READ_MEDIA_IMAGES"};
-        } else {
-            strArr = new String[]{"android.permission.READ_EXTERNAL_STORAGE"};
-        }
-        ArrayList arrayList = new ArrayList();
-        for (String str : strArr) {
-            if (ContextCompat.checkSelfPermission(this, str) != 0) {
-                arrayList.add(str);
-            }
-        }
-        ArrayList arrayList2 = arrayList;
-        if (arrayList2.isEmpty()) {
-            scanLocalMediaInBackground();
-        } else {
-            this.requestPermissionLauncher.launch(arrayList2.toArray(new String[0]));
-        }
+        // Disabled on Android TV to avoid permission dialog and crash
     }
 
     private final void scanLocalMediaInBackground() {
