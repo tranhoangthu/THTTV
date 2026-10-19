@@ -1,6 +1,6 @@
 #EXTM3U url-tvg="https://epg.io.vn/epg.xml, https://epg.blaosolar.vn/schedule/epg.xml"
 #EXTINF:-1 tvg-id="vtv1hd" tvg-name="VTV1" tvg-logo="https://image2.blaosolar.vn/logo/vtv1hd.jpg" group-title="VTV",VTV1
-https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/vtv1/master.m3u8|https://freem3u.xyz/api/live/play.m3u8?vid=2|https://cdnet-cdn-01.onsports.vn/onplus/VTV1_HD/manifest.mpd|https://live-on-cdn.sigmaott.com/manifest/vtv1/playlist_480p.m3u8
+https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/vtv1/master.m3u8|http://test.stream/vtv1_backup.m3u8|https://freem3u.xyz/api/live/play.m3u8?vid=2|https://cdnet-cdn-01.onsports.vn/onplus/VTV1_HD/manifest.mpd
 #EXTINF:-1 tvg-id="vtv2hd" tvg-name="VTV2" tvg-logo="https://image3.blaosolar.vn/logo/vtv2hd.jpg" group-title="VTV",VTV2
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
 https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/vtv2/master.m3u8|https://vmttv.dpdns.org/tv360/?id=vtv2|https://tv.vietanhtv.top/tv360/tv360.php?id=3&expires=1792290363&token=c83751c6691553f87f68e6df7dfc1825|https://s7485.cdn.mytvnet.vn/pkg20/__cl/gvtsig/vstv451/manifest.mpd
@@ -454,6 +454,8 @@ https://vmttv.dpdns.org/tv360/?id=360-anime|https://toiyeuvietnam.dpdns.org/Tuye
 https://vmttv.dpdns.org/tv360/?id=360-thieu-nhi|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/360-thieu-nhi/KenhCoBan.m3u8
 #EXTINF:-1 tvg-id="360phim4k" tvg-name="360 Phim 4K" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/07/30/10/1785382803894/362700e9107b_640_360.png" group-title="Giải Trí",360 Phim 4K
 https://vmttv.dpdns.org/tv360/?id=360-phim-4k
+#EXTINF:-1 tvg-id="test_channel_new" tvg-name="Kênh Thử Nghiệm 2026" tvg-logo="https://vnepg.site/logo/kenhthunghiem2026.png" group-title="Giải Trí",Kênh Thử Nghiệm 2026
+http://test.stream/kenh_moi_2026.m3u8
 #EXTINF:-1 tvg-id="skyf1" tvg-name="Sky Sport F1" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/p5csyn1620551587.png" group-title="THỂ THAO QUỐC TẾ",Sky Sport F1
 http://line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:3F:0C:96&stream=1149423&extension=ts&play_token=1jkVQWGCqc
 #EXTINF:-1 tvg-id="skytennis" tvg-name="Sky Sport Tennis" tvg-logo="https://e0.365dm.com/24/01/2048x1152/skysports-sky-sports-tennis_6437040.jpg" group-title="THỂ THAO QUỐC TẾ",Sky Sport Tennis
@@ -861,7 +863,7 @@ https://live.fptplay53.net/fnxhd2/afchd_vhls.smil/chunklist.m3u8|https://freem3u
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"6YaPX0c9D9hpnt5I1THCsA","kid":"rLTCNHEGMyetxzLig8CEfw"}],"type":"temporary"}
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://s2129134.cdn.mytvnet.vn/pkg20/live_dzones/max.smil/manifest.mpd|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/cinemax/KenhCoBan.m3u8|https://toiyeuvietnam.dpdns.org/OnliveTV/cinemaxHD/Free.m3u8|https://tivixiaomi.vn/iptv/c.php?k=cinemax
+https://s2129134.cdn.mytvnet.vn/pkg20/live_dzones/max.smil/manifest.mpd|https://toiyeuvietnam.dpdns.org/OnliveTV/cinemaxHD/Free.m3u8|https://tivixiaomi.vn/iptv/c.php?k=cinemax
 #EXTINF:-1 tvg-id="cinemaworldhd" tvg-name="Cinema World" tvg-logo="https://image1.blaosolar.vn/logo/cinemaworldhd.jpg" group-title="Quốc Tế",Cinema World
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -1057,7 +1059,8 @@ https://freem3u.xyz/api/live/play.m3u8?vid=10036|https://strm.voh.com.vn/radio/c
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
 https://freem3u.xyz/api/live/play.m3u8?vid=10040
 #EXTINF:-1 tvg-id="bacninhradio" tvg-name="Bắc Ninh" tvg-logo="https://image1.blaosolar.vn/logo/bacninh.png" group-title="Radio",Bắc Ninh
-https://live.mediatech.vn/live/285f5f227e988ab4445a2138091d3d62e8d/playlist.m3u8|https://live.mediatech.vn/live/285acd5e43b501e4c21b0af4e55810625c8/chunklist.m3u8|http://118.107.85.4:1935/radio/bacninh_aac/playlist.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/bac-ninh/KenhCoBan.m3u8
+#EXTVLCOPT:http-user-agent=Dalvik/2.1.0
+https://live.mediatech.vn/live/285f5f227e988ab4445a2138091d3d62e8d/playlist.m3u8|https://vmttv.dpdns.org/tv360/?id=bac-ninh|https://live.mediatech.vn/live/285acd5e43b501e4c21b0af4e55810625c8/chunklist.m3u8|https://tv.vietanhtv.top/vieon/vieon.php?id=bac-giang-hd
 #EXTINF:-1 tvg-id="camauradio" tvg-name="Cà Mau" tvg-logo="https://image1.blaosolar.vn/logo/camau.png" group-title="Radio",Cà Mau
 https://freem3u.xyz/api/live/play.m3u8?vid=46|http://tv.ctvcamau.vn/live/radio/radio.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/ca-mau/KenhCoBan.m3u8|https://tv.ctvcamau.vn/live/tv/tv.m3u8
 #EXTINF:-1 tvg-id="canthoradio1" tvg-name="Cần Thơ Radio 1" tvg-logo="https://canthoplus.vn/storage/channels/9b7858d5-ff44-43b3-94ab-e4d66a54f1bd.png" group-title="Radio",Cần Thơ Radio 1
@@ -1082,8 +1085,7 @@ https://freem3u.xyz/api/live/play.m3u8?vid=9906|https://sgchill.io.vn/360/9906/i
 #EXTINF:-1 tvg-id="hatinhradio" tvg-name="Hà Tĩnh" tvg-logo="https://image4.blaosolar.vn/logo/hatinh.jpg" group-title="Radio",Hà Tĩnh
 https://cohauw9bgpvod.vcdn.cloud/httv1/index.m3u8|https://wse.hatinhtv.net/radio/voht/playlist.m3u8|https://wse.hatinhtv.net/live/httv1/playlist.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/ha-tinh/KenhCoBan.m3u8
 #EXTINF:-1 tvg-id="hungyenradio" tvg-name="Hưng Yên" tvg-logo="https://image1.blaosolar.vn/logo/hungyen.png" group-title="Radio",Hưng Yên
-#EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://live.mediatech.vn/live/285f5449d7d7d2946e0bd2d54b7e60f25a4/playlist.m3u8|https://vmttv.dpdns.org/tv360/?id=hung-yen|https://live.mediatech.vn/live/285b6e443bc30734725a940da8b0629655b/chunklist.m3u8|https://live.mediatech.vn/live/285f5449d7d7d2946e0bd2d54b7e60f25a4/chunklist.m3u8
+https://live.mediatech.vn/live/285f5449d7d7d2946e0bd2d54b7e60f25a4/playlist.m3u8|https://live.mediatech.vn/live/285b6e443bc30734725a940da8b0629655b/chunklist.m3u8|http://103.90.220.236/hytvlive/radio.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/hung-yen/KenhCoBan.m3u8
 #EXTINF:-1 tvg-id="angiangradio1" tvg-name="4 Mhz" tvg-logo="https://angiangtv.vn/wp-content/uploads/2025/06/H6.png" group-title="Radio",4 Mhz
 #EXTVLCOPT:http-user-agent=VThanhTivi
 https://tv.angiangtv.vn/live/kgaudio/kgaudio.m3u8
@@ -1093,10 +1095,9 @@ https://tv.angiangtv.vn/live/kgtv3/kgtv3.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 https://cloudstreamthdn.tek4tv.vn/audio/daknong_radio/chunklist_w1535814517.m3u8|http://118.107.85.4:1935/radio/lamdong_aac/playlist.m3u8|https://tivixiaomi.vn/iptv/c.php?k=lamdong1
 #EXTINF:-1 tvg-id="langsonradio" tvg-name="Lạng Sơn" tvg-logo="https://image3.blaosolar.vn/logo/langson.png" group-title="Radio",Lạng Sơn
-https://stream.langsontv.vn/live/285c78da0c246524c90917842f8de03bd21/playlist.m3u8|https://stream.langsontv.vn/live/285dabcfc94f52b458688fe7f601524816e/chunklist.m3u8|http://103.90.220.236/lstvlive/radio-transmux.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/lang-son/KenhCoBan.m3u8
+https://stream.langsontv.vn/live/285c78da0c246524c90917842f8de03bd21/playlist.m3u8|https://stream.langsontv.vn/live/285c78da0c246524c90917842f8de03bd21/chunklist.m3u8|https://stream.langsontv.vn/live/285dabcfc94f52b458688fe7f601524816e/chunklist.m3u8|http://103.90.220.236/lstvlive/radio-transmux.m3u8
 #EXTINF:-1 tvg-id="ninhbinhradio" tvg-name="Ninh Bình" tvg-logo="https://image1.blaosolar.vn/logo/ninhbinh.png" group-title="Radio",Ninh Bình
-#EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://live.mediatech.vn/live/28597f8fd7ea5064d0f84ab00b3699dfd86/playlist.m3u8|https://live.mediatech.vn/live/28597f8fd7ea5064d0f84ab00b3699dfd86/chunklist.m3u8|https://live.mediatech.vn/live/285391a08f01f83458793b293c5e9517265/chunklist.m3u8|https://tv.vietanhtv.top/vieon/vieon.php?id=ninh-binh-11
+https://live.mediatech.vn/live/28597f8fd7ea5064d0f84ab00b3699dfd86/playlist.m3u8|https://live.mediatech.vn/live/285391a08f01f83458793b293c5e9517265/chunklist.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/ninh-binh/KenhCoBan.m3u8|https://live.fptplay53.net/fnxsd1/ninhbinh_hls.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="quangninhradio1" tvg-name="QNR1 - Quảng Ninh" tvg-logo="https://media.baoquangninh.vn/upload/files/logo/logotrangchu4.png" group-title="Radio",QNR1 - Quảng Ninh
 http://103.90.220.236/qtvlive/qnr1.m3u8
 #EXTINF:-1 tvg-id="quangninhradio2" tvg-name="QNR2 - Quảng Ninh" tvg-logo="https://media.baoquangninh.vn/upload/files/logo/logotrangchu3.png" group-title="Radio",QNR2 - Quảng Ninh
@@ -1104,8 +1105,7 @@ http://103.90.220.236/qtvlive/qnr2.m3u8
 #EXTINF:-1 tvg-id="sonlaradio" tvg-name="Sơn La" tvg-logo="https://image2.blaosolar.vn/logo/sonla.png" group-title="Radio",Sơn La
 https://live.mediatech.vn/live/28595222e707a364251b8724717894baa46/playlist.m3u8|https://cdn.sonlatv.vn/live/285bfb76d0d7a3c4615b853fe7a698e150c/chunklist.m3u8|http://103.90.220.236/sltvlive/radio-transmux.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/son-la/KenhCoBan.m3u8
 #EXTINF:-1 tvg-id="thainguyenradio" tvg-name="Thái Nguyên" tvg-logo="https://image1.blaosolar.vn/logo/thainguyen.png" group-title="Radio",Thái Nguyên
-#EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://freem3u.xyz/api/live/play.m3u8?vid=88|https://radio.thainguyentv.vn/hls/livestream.m3u8|https://streaming.thainguyentv.vn/hls/livestream.m3u8|http://media.mediatech.vn:1935/tntvlive/tnra/chunklist.m3u8
+https://radio.thainguyentv.vn/hls/livestream.m3u8|http://media.mediatech.vn:1935/tntvlive/tnra/chunklist.m3u8|https://toiyeuvietnam.dpdns.org/TuyetDoiKhongKinhDoanh/thai-nguyen/KenhCoBan.m3u8|https://live.fptplay53.net/fnxsd1/thainguyen_hls.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="tayninhradio" tvg-name="Tây Ninh" tvg-logo="https://w.ladicdn.com/s450x400/5ec394fc3354ff26568e1124/logo-fm1031mhz-20211008162127.png" group-title="Radio",Tây Ninh
 https://live.mediatech.vn/live/2851dc2c9af68834814a89e61db0faee561/playlist.m3u8|https://live-hq.evgcdn.net/live/2851dd3d9016ac74d84b0c4a7a659f76891/chunklist.m3u8|https://live-diaphuong-aws.vtvdigital.vn/BoOyJYUNkYybysXax5bI5Q/1791482400/aws-dp/tayninhtv/live/tayninhtv_720p/chunks.m3u8|http://202.43.109.142:1935/radio11/tnradio/chunklist.m3u8
 #EXTINF:-1 tvg-id="mradiovietnam" tvg-name="M Radio Việt Nam" tvg-logo="https://proxy.zeno.fm/content/stations/agxzfnplbm8tc3RhdHNyMgsSCkF1dGhDbGllbnQYgICQ2ciKiAoMCxIOU3RhdGlvblByb2ZpbGUYgICQucnHqwsMogEEemVubw/image/" group-title="Radio",M Radio Việt Nam
